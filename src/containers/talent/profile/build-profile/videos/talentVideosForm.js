@@ -13,7 +13,6 @@ import ColumnButton from 'components/shiptalent/buttons/columnButton';
 import ImportantRegardingButton from 'components/shiptalent/buttons/importantRegardingButton';
 import Spacer from "components/general/spacer";
 import * as talentActions from 'actions/talentActions';
-import { getPathByPositionName } from 'utils/appUtils';
 import defaultValues from 'constants/defaultValues';
 import { styles } from 'styles';
 

@@ -285,7 +285,7 @@ class TalentPicturesForm extends Component {
                 />
                 <Typography
                   gutterBottom
-                  variant='Subheading'
+                  variant='subtitle1'
                   className={classes.talentProfileVideoUploadingText}
                 >
                   {`Uploading (${progressPercent.toFixed(0)} %) ... `}

@@ -9,7 +9,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import Panel from 'components/general/panel';
 import ProfilePicture from './ProfilePicture';
 import ConfirmApprovePictureDialog from './ConfirmApprovePictureDialog';
@@ -116,27 +116,27 @@ class ProfileEditPicture extends React.Component  {
           <Grid item xs />
           <Grid item md={7} xs={12}>
             <Grid container spacing={24}>
-              <Grid item xs={12} spacing={0}>
-                <Typography className={classNames(classes.adminGeneralDescriptionText, classes.inlineText)}>
-                    <Typography className={classNames(classes.adminGeneralDescriptionText, classes.bold, classes.inlineText)}>
-                        {'Date and Time Posted: '}
-                    </Typography>
-                    {picture ? moment.tz(picture.updated).format(defaultValues.ADMIN_EDIT_PROFILE_FORMAT) : ''}
+              <Grid item xs={12}>
+                <Typography className={classNames(classes.adminGeneralDescriptionText, classes.bold, classes.inlineText)}>
+                  {'Date and Time Posted: '}
+                </Typography>
+                <Typography className={classNames(classes.adminGeneralDescriptionText, classes.inlineText)}>    
+                  {picture ? moment.tz(picture.updated).format(defaultValues.ADMIN_EDIT_PROFILE_FORMAT) : ''}
                 </Typography>
               </Grid>
               <Grid item xs={12}>
+                <Typography className={classNames(classes.adminGeneralDescriptionText, classes.bold, classes.inlineText)}>
+                  {'Date and Time Approved: '}
+                </Typography>
                 <Typography className={classNames(classes.adminGeneralDescriptionText, classes.inlineText)}>
-                  <Typography className={classNames(classes.adminGeneralDescriptionText, classes.bold, classes.inlineText)}>
-                      {'Date and Time Approved: '}
-                  </Typography>
                   {picture ? moment.tz(picture.approved_date).format(defaultValues.ADMIN_EDIT_PROFILE_FORMAT) : ''}
                 </Typography>
               </Grid>
               <Grid item xs={12}>
-                <Typography className={classNames(classes.adminGeneralDescriptionText, classes.inlineText)}>
-                  <Typography className={classNames(classes.adminGeneralDescriptionText, classes.bold, classes.inlineText)}>
-                      {'Approved By: '}
-                  </Typography>
+                <Typography className={classNames(classes.adminGeneralDescriptionText, classes.bold, classes.inlineText)}>
+                  {'Approved By: '}
+                </Typography>
+                <Typography className={classNames(classes.adminGeneralDescriptionText, classes.inlineText)}>  
                   {picture ? picture.approved_by : ''}
                 </Typography>
               </Grid>

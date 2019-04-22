@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
+import createHistory from 'history/createBrowserHistory';
 import configureStore from './store';
 import Routes from './routes/index';
 import './static/css/App.css';
 import './static/css/vendor-styles.css';
 
-const { store, persistor } = configureStore();
+const { store, persistor } = configureStore(history);
 export { store };
+
+
+export const history = createHistory();
 
 class App extends Component {
 

@@ -105,7 +105,7 @@ class LastWizard extends Component {
                 <Paper elevation={1} className={classes.paperDescription}>
                   <Grid container direction="column" alignItems="center"  spacing={24}>
                     <Grid item xs={12}>
-                      <Typography variant="title" align="center" colorTextPrimary>
+                      <Typography variant="h6" align="center" colorTextPrimary>
                         {"From here, the wizard takes Talent through each section:"}
                       </Typography>
                     </Grid>

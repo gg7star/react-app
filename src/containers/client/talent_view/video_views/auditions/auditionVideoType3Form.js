@@ -330,7 +330,7 @@ class AuditionVideoTypeStaffForm extends Component {
           <Grid item lg={10} md={10} xs={12}>
             <Typography
               gutterBottom
-              variant='Subheading'
+              variant='subtitle1'
               className={classes.talentProfileVideoAuditionDescriptionText}
             >
               {`NOTE: You will see your uploaded ${name} Videos and Introduction

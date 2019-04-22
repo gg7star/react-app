@@ -1,20 +1,20 @@
-import apiConfig from 'constants/api';
+import apiConfig from "constants/api";
 import { getToken } from "service/storage";
 import * as globalNotificationActions from 'actions/globalNotificationActions';
 import * as talentAction from "actions/talentActions";
 import * as clientAction from "actions/clientActions";
 import * as adminAction from "actions/adminActions";
-import { store } from 'App';
-import { getAuth } from 'service/storage';
+import axios from "axios"
+import { store } from "App";
+import { getAuth } from "service/storage";
 
 const processResponse = (response, handleResponse) => {
   console.log('=== response: ', response);
   if(response.error) {
     console.log('error: ', response.error);
     handleResponse(response.error, true);
-  }
-  else {
-    if (response){
+  } else {
+    if (response) {
       console.log('success: ', response);
       handleResponse(response, false)
     } else {
@@ -55,28 +55,25 @@ export const processRequestWithToken = (url, method, data, handleResponse) => {
   console.log('==== processRequest: ', url, data);
   let parameters = {
     method: method,
+    url: url,
     headers: {
-      "Accept": "application/json",
-      "Authorization": `Bearer ${getToken()}`
+      'Authorization': `Bearer ${getToken()}`,
     }
   };
 
-  if (method !== 'get' && data !== '' && data !== null) {
+  if ((method !== 'get') && (data !== '') && (data !== null)) {
     parameters = {...parameters, body: JSON.stringify(data)};
-    parameters.headers = {...parameters.headers, "Content-Type": "application/json"};
+    parameters.headers = {...parameters.headers, 'Content-Type': 'application/json'};
   }
 
   console.log('==== parameters: ', parameters)
-
   fetch(`${apiConfig.url}/${url}`, parameters)
-    .then(response => {console.log('=== response: ', response); return response.json()})
-    .then(response => {
-      processResponse(response, handleResponse)
-    })
+    .then(response => response.json())
+    .then(response => processResponse(response, handleResponse))
     .catch(error => {
       console.log('error: ', error)
       handleResponse(error, true)
-    })
+    });
 };
 
 const notifyStatus = (type, message) => store.dispatch(globalNotificationActions.notify(true, type, message));
@@ -92,25 +89,25 @@ export const notifyInfo = (message) => notifyStatus('info', message);
 const handleResponseNotification = (isFailed, failedMessage, successMessage) => {
   if(isFailed) notifyError(failedMessage);
   else notifySuccess(successMessage);
-}
+};
 
 export const hanldeResponseWithTalentNotification = (response, isFailed, failMessage, successMessage, handleResponse, needRefreshTalentInfo) => {
   handleResponseNotification(isFailed, failMessage, successMessage);
   if (needRefreshTalentInfo) refreshTalentInfo();
   handleResponse(response, isFailed);
-}
+};
 
 export const hanldeResponseWithClientNotification = (response, isFailed, failMessage, successMessage, handleResponse, needRefreshClientInfo) => {
   handleResponseNotification(isFailed, failMessage, successMessage);
   if (needRefreshClientInfo) refreshClientInfo();
   handleResponse(response, isFailed);
-}
+};
 
 export const hanldeResponseWithAdminNotification = (response, isFailed, failMessage, successMessage, handleResponse, needRefreshClientInfo) => {
   handleResponseNotification(isFailed, failMessage, successMessage);
   if (needRefreshClientInfo) refreshAdminInfo();
   handleResponse(response, isFailed);
-}
+};
 
 export const refreshTalentInfo = () => store.dispatch(talentAction.getCurrentTalentInfo());
 export const refreshClientInfo = () => store.dispatch(clientAction.getCurrentClientInfo());
@@ -142,4 +139,4 @@ export const processRequestWithNotification = (url, method, data, handleResponse
         console.log('no auth store.');
     }
   );
-}
+};

@@ -19,8 +19,7 @@ export const adminStyles = theme => ({
       backgroundColor: '#ffffff', //'#e4e5e6'
       position: 'absolute',
       width: '100% !important',
-      height: '100% !important',
-      display: 'flex'
+      height: '100% !important'
     }
   },
   root: {
@@ -28,8 +27,7 @@ export const adminStyles = theme => ({
     backgroundColor: '#ffffff', //'#e4e5e6'
     position: 'absolute',
     width: '100% !important',
-    height: '100% !important',
-    display: 'flex'
+    height: '100% !important'
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
@@ -552,7 +550,7 @@ export const adminStyles = theme => ({
     color: theme.palette.black.main,
   },
   adminTalentSearchSubPositionButtonSelected: {
-    display: '\'inline-flex',
+    display: 'inline-flex',
     borderRadius: '9px',
     color: theme.palette.white.main,
     backgroundColor: theme.palette.black.light,
@@ -680,7 +678,6 @@ export const adminStyles = theme => ({
   adminFormSubTitle: {
     fontSize: '1.25rem',
     fontWeight: 600,
-    //ffontFamily: fontFamily,
     fontFamily: fontFamily,
     lineHeight: '1.46429em',
     marginTop: '0.5rem'
@@ -726,7 +723,6 @@ export const adminStyles = theme => ({
     textTransform: 'none',
     borderRadius: '8px',
     backgroundColor: theme.palette.black.main,
-    // border: '1px solid #EEEEEE',
     primaryColor: theme.palette.white.main,
     '&:hover': {
       backgroundColor: theme.palette.black.thin,
@@ -833,7 +829,6 @@ export const adminStyles = theme => ({
     textAlign: 'right',
     paddingRight: '5px!important',
     verticalAlign: 'top',
-    // paddingTop: '10px!important',
     marginBottom: 'auto',
     justifyContent: 'flex-end',
     display: 'flex'
@@ -845,7 +840,7 @@ export const adminStyles = theme => ({
     border: `2px solid ${theme.palette.grey.thin}`,
     '&:hover': {
       backgroundColor: theme.palette.black.light
-    },
+    }
   },
   adminTalentSearchButton: {
     backgroundColor: theme.palette.black.main,
@@ -854,8 +849,7 @@ export const adminStyles = theme => ({
     border: `2px solid ${theme.palette.grey.thin}`,
     '&:hover': {
       backgroundColor: theme.palette.black.light
-    },
-    // width: '100px'
+    }
   },
   adminCastingRequestListViewButtonText: {
     fontSize: '0.95rem',
@@ -1228,8 +1222,8 @@ export const themeAdmin = createMuiTheme ({
     }
   },
   typography: {
-    ffontFamily: fontFamily,
-    textTransform: "none",
+    fontFamily: fontFamily,
+    textTransform: 'none',
     useNextVariants: true
   },
   button: {
@@ -1238,22 +1232,6 @@ export const themeAdmin = createMuiTheme ({
   },
 
   overrides: {
-    // Name of the component ⚛️ / style sheet
-    // MuiButton: {
-    //   root: {
-    //     backgroundColor: '#007bff!important',
-    //   },
-    //   text: {
-    //     // Some CSS
-    //     // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    //     borderRadius: 3,
-    //     border: 0,
-    //     color: 'white',
-    //     height: 48,
-    //     padding: '0 30px',
-    //     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-    //   },
-    // },
     MuiListItemText: {
       primary: {
         color: '#f8f9fa'

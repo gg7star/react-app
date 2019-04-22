@@ -196,7 +196,7 @@ class MyVideos extends Component {
 
         <Row >
           <Col className="profile-other-info-button-description">
-            <Typography gutterBottom variant='Subheading'>
+            <Typography gutterBottom variant='subtitle1'>
               <b>Video Interviews (required)</b>
               {`
                  are located within the section of your primary discripline

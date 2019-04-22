@@ -322,7 +322,7 @@ class MyResume extends Component {
                 />
                 <Typography
                   gutterBottom
-                  variant='Subheading'
+                  variant='subtitle1'
                   className={classes.talentProfileVideoUploadingText}
                 >
                   {`Uploading (${progressPercent.toFixed(0)} %) ... `}
@@ -354,7 +354,6 @@ class MyResume extends Component {
   render() {
     return (
       <MuiThemeProvider theme={theme}>
-        {this.state.notification && <Alert color="info">{this.state.notification}</Alert>}
         {this.renderContents()}
       </MuiThemeProvider>
     )

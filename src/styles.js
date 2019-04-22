@@ -962,7 +962,7 @@ export const styles = theme => ({
     color: theme.palette.black.main,
   },
   clientTalentSearchSubPositionButtonSelected: {
-    display: '\'inline-flex',
+    display: 'inline-flex',
     borderRadius: '9px',
     color: theme.palette.white.main,
     backgroundColor: theme.palette.black.light,

@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import AlertDialog from 'components/shiptalent/dialogs/AlertDialog';
 import TextField from '@material-ui/core/TextField';
@@ -29,7 +30,7 @@ class ConfirmRejectPictureDialog extends React.Component {
           autoFocus
           id="outlined-bare"
           label="Comment"
-          className={classes.textField}
+          className={classNames(classes.textField)}
           margin="dense"
           variant="outlined"
           rows={3}

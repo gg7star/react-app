@@ -296,7 +296,7 @@ class SingleSelectDropdown extends React.Component {
       let group = groups[i]
       if (group.value === index) {
         return (
-          <Typography variant="subheading" gutterBottom>
+          <Typography variant="subtitle1" gutterBottom>
             {group.label}
           </Typography>
         )
@@ -305,7 +305,7 @@ class SingleSelectDropdown extends React.Component {
         let option = group.options[j]
         if (option.value === index) {
           return  (
-            <Typography variant="subheading" gutterBottom>
+            <Typography variant="subtitle1" gutterBottom>
               {`${group.label}: ${option.label}`}
             </Typography>
           )

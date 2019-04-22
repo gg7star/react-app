@@ -215,7 +215,7 @@ class MyAvailability extends Component {
     this.props.talentActions.getCurrentTalentInfo();
     this.setState({
       isChanged: false
-    })
+    });
   };
 
   checkChanges = (event) => {
@@ -224,14 +224,14 @@ class MyAvailability extends Component {
       event.preventDefault();
       this.setState({
         showConfirmChanges: true
-      })
+      });
     }
   }
 
   handleCloseConfirm = () => {
     this.setState({
       showConfirmChanges: false
-    })
+    });
   }
 
   handleCalendarSelect = (range, year, month) => {

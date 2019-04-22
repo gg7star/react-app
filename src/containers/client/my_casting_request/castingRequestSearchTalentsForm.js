@@ -112,7 +112,7 @@ class CastingRequestSearchTalentsForm extends Component {
     };
     let nextLink = {
       pathname: "/client/casting_request/view",
-      state: {castingRequest: castingRequest}
+      state: {castingRequest}
     };
 
     return (

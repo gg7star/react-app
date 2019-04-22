@@ -50,7 +50,8 @@ class HeadLine extends React.Component  {
   };
 
   handleClickSave = () => {
-    const { profile, headLine, bio } = this.state;
+    const { headLine, bio } = this.state;
+    const { profile } = this.props;
     let data = {
       head_line: headLine,
       bio

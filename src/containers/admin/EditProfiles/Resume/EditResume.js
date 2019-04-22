@@ -59,7 +59,8 @@ class EditResume extends React.Component  {
 
   handleClickApproveOk = () => {
     this.setState({openConfirmApproveDialog: false}, () => {
-      const { profile, resume } = this.state;
+      const { resume } = this.state;
+      const { profile } = this.props;
       let data = {
         talent: profile.id,
         approved: true,

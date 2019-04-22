@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Row, Col, Alert } from 'reactstrap';
 import { connect } from 'react-redux';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
@@ -296,7 +295,6 @@ class TalentLanguageForm extends Component {
   render() {
     return (
       <div>
-        {this.state.notification && <Alert color="info">{this.state.notification}</Alert>}
         {this.renderContents()}
       </div>
     )

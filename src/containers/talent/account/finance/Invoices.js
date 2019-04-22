@@ -1,7 +1,6 @@
 import React from "react";
 import classNames from 'classnames';
 import withStyles from "@material-ui/core/styles/withStyles";
-import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import styles from 'styles';
 import Table from "components/admin/Table/Table";

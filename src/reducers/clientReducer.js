@@ -1,4 +1,4 @@
-import * as types from '../actions/actionTypes';
+import * as types from 'actions/actionTypes';
 
 const initState = {
   isFetching: false,
@@ -43,7 +43,7 @@ export const getCurrentClientInfo = (state = initialClientInfoState, action) => 
     default:
       return state;
   }
-}
+};
 
 export const talentSearchReducer = (state = initState, action) => {
   switch (action.type) {
@@ -109,7 +109,7 @@ export const searchViewReducer = (state = initState, action) => {
       console.log(action.payload);
       return state;
     case types.SEARCH_VIEW.FAILURE:
-      console.log('failure')
+      console.log('failure');
       return state;
     default:
       return state;

@@ -142,13 +142,13 @@ class TalentContactInfoForm extends Component {
 
   handleRelationshipChange = (event, index, value) => {
     const { emergencyInfo } = this.state;
-    // let newEmergencyInfo = emergencyInfo;
-    emergencyInfo['relationship'] = value;
+    let newEmergencyInfo = emergencyInfo;
+    newEmergencyInfo['relationship'] = value;
     // console.log('===== emergencyInfo: ', emergencyInfo);
-    // console.log('===== value: ', value);
-    // console.log('===== newEmergencyInfo: ', newEmergencyInfo);
+    console.log('===== value: ', value);
+    console.log('===== newEmergencyInfo: ', newEmergencyInfo);
     this.setState({
-      emergencyInfo: emergencyInfo,
+      emergencyInfo: newEmergencyInfo,
       isChanged: true
     }, () => {
       console.log('===== emergencyInfo: ', emergencyInfo);
